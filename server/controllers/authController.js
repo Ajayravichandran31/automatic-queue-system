@@ -4,8 +4,9 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'ajayravichandran31@gmail.com', // Your Gmail
-    pass: 'veqz lzyz pplv nlaw' // 16-character App Password
+    user: 'ajayravichandran31@gmail.com',
+    // This tells the code to look for the password you saved on Render
+    pass: process.env.GMAIL_PASS 
   }
 });
 
