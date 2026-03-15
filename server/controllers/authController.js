@@ -5,8 +5,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'ajayravichandran31@gmail.com',
-    // This tells the code to look for the password you saved on Render
-    pass: process.env.GMAIL_PASS 
+    pass: process.env.GMAIL_PASS // It MUST use the "Secret Key" from Render
   }
 });
 
