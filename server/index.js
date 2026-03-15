@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const queueRoutes = require('./routes/queueRoutes');
 const app = express();
-
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors()); 
 app.use(express.json());
 
 // Replace your connect line with this one:
