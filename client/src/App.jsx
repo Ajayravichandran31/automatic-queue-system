@@ -28,7 +28,7 @@ function App() {
 
   const fetchQueue = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/queue');
+      const res = await axios.get('https://automatic-queue-system.onrender.com/api/queue');
       setWaitingList(res.data);
     } catch (err) { console.error(err); }
   };
@@ -49,7 +49,7 @@ function App() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/register', { name });
+      const res = await axios.post('https://automatic-queue-system.onrender.com/api/register', { name });
       setToken(res.data.tokenNumber);
       setName('');
       fetchQueue();
@@ -59,7 +59,7 @@ function App() {
   const handleCallNext = async () => {
     try {
       const idToken = await auth.currentUser.getIdToken();
-      await axios.post('http://localhost:5000/api/call-next', {}, {
+      await axios.post('https://automatic-queue-system.onrender.com/api/call-next', {}, {
         headers: { Authorization: `Bearer ${idToken}` }
       });
       fetchQueue();

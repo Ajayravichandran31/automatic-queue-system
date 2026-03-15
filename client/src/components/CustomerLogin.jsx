@@ -11,7 +11,7 @@ const CustomerLogin = () => {
   const handleSendOTP = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/send-otp', { email });
+      await axios.post('https://automatic-queue-system.onrender.com/api/send-otp', { email });
       setIsOtpSent(true);
       alert("OTP sent to your email!");
     } catch (err) { alert("Error sending OTP"); }
@@ -20,7 +20,7 @@ const CustomerLogin = () => {
   const handleVerifyOTP = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/verify-otp', { email, otp });
+      const res = await axios.post('https://automatic-queue-system.onrender.com/api/verify-otp', { email, otp });
       if (res.data.success) {
         // Save customer session and go to Register page
         localStorage.setItem('customerEmail', email);
