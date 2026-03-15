@@ -4,12 +4,7 @@ const cors = require('cors');
 const queueRoutes = require('./routes/queueRoutes');
 const app = express();
 
-app.use(cors({
-  origin: 'https://quiet-panda-95357c.netlify.app', 
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
-
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 
 // Replace your connect line with this one:
